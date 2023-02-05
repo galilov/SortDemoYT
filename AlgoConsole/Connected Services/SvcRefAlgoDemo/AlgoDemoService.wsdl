@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="AlgoDemoService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:8090/algodemo?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:8090/algodemo?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAlgoDemoService_GetItemCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemCount" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_GetItemCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_GetItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItem" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_GetItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_SwapItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwapItems" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_SwapItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwapItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_SetItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetItem" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_SetItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_Select_InputMessage">
+    <wsdl:part name="parameters" element="tns:Select" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_Select_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_Unselect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Unselect" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_Unselect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnselectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_UnselectAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnselectAll" />
+  </wsdl:message>
+  <wsdl:message name="IAlgoDemoService_UnselectAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnselectAllResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAlgoDemoService">
+    <wsdl:operation name="GetItemCount">
+      <wsdl:input wsam:Action="http://tempuri.org/IAlgoDemoService/GetItemCount" message="tns:IAlgoDemoService_GetItemCount_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IAlgoDemoService/GetItemCountResponse" message="tns:IAlgoDemoService_GetItemCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <wsdl:input wsam:Action="http://tempuri.org/IAlgoDemoService/GetItem" message="tns:IAlgoDemoService_GetItem_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IAlgoDemoService/GetItemResponse" message="tns:IAlgoDemoService_GetItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwapItems">
+      <wsdl:input wsam:Action="http://tempuri.org/IAlgoDemoService/SwapItems" message="tns:IAlgoDemoService_SwapItems_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IAlgoDemoService/SwapItemsResponse" message="tns:IAlgoDemoService_SwapItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetItem">
+      <wsdl:input wsam:Action="http://tempuri.org/IAlgoDemoService/SetItem" message="tns:IAlgoDemoService_SetItem_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IAlgoDemoService/SetItemResponse" message="tns:IAlgoDemoService_SetItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Select">
+      <wsdl:input wsam:Action="http://tempuri.org/IAlgoDemoService/Select" message="tns:IAlgoDemoService_Select_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IAlgoDemoService/SelectResponse" message="tns:IAlgoDemoService_Select_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Unselect">
+      <wsdl:input wsam:Action="http://tempuri.org/IAlgoDemoService/Unselect" message="tns:IAlgoDemoService_Unselect_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IAlgoDemoService/UnselectResponse" message="tns:IAlgoDemoService_Unselect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnselectAll">
+      <wsdl:input wsam:Action="http://tempuri.org/IAlgoDemoService/UnselectAll" message="tns:IAlgoDemoService_UnselectAll_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IAlgoDemoService/UnselectAllResponse" message="tns:IAlgoDemoService_UnselectAll_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAlgoDemoService" type="tns:IAlgoDemoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetItemCount">
+      <soap:operation soapAction="http://tempuri.org/IAlgoDemoService/GetItemCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <soap:operation soapAction="http://tempuri.org/IAlgoDemoService/GetItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwapItems">
+      <soap:operation soapAction="http://tempuri.org/IAlgoDemoService/SwapItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetItem">
+      <soap:operation soapAction="http://tempuri.org/IAlgoDemoService/SetItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select">
+      <soap:operation soapAction="http://tempuri.org/IAlgoDemoService/Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unselect">
+      <soap:operation soapAction="http://tempuri.org/IAlgoDemoService/Unselect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnselectAll">
+      <soap:operation soapAction="http://tempuri.org/IAlgoDemoService/UnselectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AlgoDemoService">
+    <wsdl:port name="BasicHttpBinding_IAlgoDemoService" binding="tns:BasicHttpBinding_IAlgoDemoService">
+      <soap:address location="http://127.0.0.1:8090/algodemo" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
